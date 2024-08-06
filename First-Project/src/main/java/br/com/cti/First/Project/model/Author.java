@@ -1,5 +1,10 @@
 package br.com.cti.First.Project.model;
 
-public record Author() {
-    
-}
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record Author(
+    @JsonAlias("url") String url,
+    @JsonAlias("name") String name
+) {}

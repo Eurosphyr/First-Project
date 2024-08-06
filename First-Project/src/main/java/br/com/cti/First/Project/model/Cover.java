@@ -9,8 +9,6 @@ public class Cover {
     @JsonAlias("medium") private String medium;
     @JsonAlias("large") private String large;
 
-    // Getters and setters
-
     @Override
     public String toString() {
         return "Cover{" +

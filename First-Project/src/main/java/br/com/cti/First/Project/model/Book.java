@@ -1,7 +1,5 @@
 package br.com.cti.First.Project.model;
 
-package br.com.cti.model;
-
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
@@ -21,4 +19,3 @@ public record Book(
     @JsonAlias("subjects") List<Subject> subjects,
     @JsonAlias("cover") Cover cover
 ) {}
-
