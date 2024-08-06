@@ -18,12 +18,14 @@ public class FirstProjectApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		var consumirApi = new ConsumirApi();
-		 var json = consumirApi.obterDado("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
+		 var json = consumirApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
 		 System.out.println(json);
-		 json = consumirApi.obterDado("https://coffee.alexflipnote.dev/random.json");
+		 json = consumirApi.obterDados("https://coffee.alexflipnote.dev/random.json");
 		 ConverteDados converterDados = new ConverteDados();
-		 DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
+		 DadosSerie dados = converterDados.obterDados(json, DadosSerie.class);
 		 System.out.println(dados);
+
+		 
 	}
 
 }
