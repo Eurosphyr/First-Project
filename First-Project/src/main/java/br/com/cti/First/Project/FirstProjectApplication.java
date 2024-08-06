@@ -1,11 +1,15 @@
 package br.com.cti.First.Project;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.cti.First.Project.model.ConverteDados;
 import br.com.cti.First.Project.model.DadosSerie;
+import br.com.cti.First.Project.model.DadosTemporada;
 import br.com.cti.First.Project.service.ConsumirApi;
 
 @SpringBootApplication
@@ -25,7 +29,13 @@ public class FirstProjectApplication implements CommandLineRunner {
 		 DadosSerie dados = converterDados.obterDados(json, DadosSerie.class);
 		 System.out.println(dados);
 
-		 
+		 List<DadosTemporada> temporadas = new ArrayList<>();
+    for (int i = 1; i <= dados.totalTemporadas(); i++) {
+        json = consumirApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&season=" + i + "&apikey=6585022c");
+        DadosTemporada dadosTemporada = converterDados.obterDados(json, DadosTemporada.class);
+        temporadas.add(dadosTemporada);
+    }
+    temporadas.forEach(System.out::println);
 	}
 
 }
