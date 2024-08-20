@@ -35,7 +35,6 @@ public class FirstProjectApplication implements CommandLineRunner {
 			var converterDados = new ConverteDados();
 
 			var dadosLivros = converterDados.obterDados(jsonLivro, DadosLivros.class);
-			System.out.println("Dados Livros: " + dadosLivros);
 			System.out.println("Dados Livros Title: " + dadosLivros.title());
 			System.out.println("Dados Livros Authors: " + dadosLivros.authors());
 			System.out.println("Dados Livros Number of Pages: " + dadosLivros.numberOfPages());
@@ -44,7 +43,6 @@ public class FirstProjectApplication implements CommandLineRunner {
 			System.out.println("Dados Livros Publishers: " + dadosLivros.publishers());
 			System.out.println("Dados Livros Publish Date: " + dadosLivros.publishDate());
 			System.out.println("Dados Livros Subjects: " + dadosLivros.subjects());
-			System.out.println("Dados Livros Cover: " + dadosLivros.cover());
 		
 		} catch (Exception e) {
 			e.printStackTrace();
