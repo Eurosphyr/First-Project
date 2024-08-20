@@ -1,20 +1,10 @@
 package br.com.cti.First.Project.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Cover {
-    @JsonAlias("small") private String small;
-    @JsonAlias("medium") private String medium;
-    @JsonAlias("large") private String large;
+public record Cover ( String small,
+String medium,
+String large
+) {}
 
-    @Override
-    public String toString() {
-        return "Cover{" +
-                "small='" + small + '\'' +
-                ", medium='" + medium + '\'' +
-                ", large='" + large + '\'' +
-                '}';
-    }
-}
